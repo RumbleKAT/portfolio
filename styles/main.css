@@ -3,9 +3,27 @@
     src: url(./fonts/GodoM.ttf) format('truetype');
 }
 
-#title_page h1{
+@font-face{
+    font-family: NanumGothic;
+    src: url(./fonts/NanumGothic-Bold.ttf) format('truetype');
+}
+
+#title_page .center_section{
+    padding: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#title_page .blackFont{
     font-family: GodoM, Roboto;
-    font-size : 40pt;
+    font-size : 48pt;
+    color : #262626;
+}
+
+#title_page .blueFont{
+    font-family: NanumGothic, Roboto;
+    font-size : 48pt;
+    color: #3363e7
 }
 
 #title_page p {
