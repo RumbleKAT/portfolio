@@ -1,0 +1,14 @@
+@font-face{
+    font-family: GodoM;
+    src: url(./fonts/GodoM.ttf) format('truetype');
+}
+
+#title_page h1{
+    font-family: GodoM, Roboto;
+    font-size : 40pt;
+}
+
+#title_page p {
+    font-family: GodoM, Roboto;
+    font-size : 15pt;
+}
