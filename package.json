@@ -1,0 +1,16 @@
+{
+  "name": "portfolio.js",
+  "version": "1.0.0",
+  "description": "make portfolio easily with browser ",
+  "main": "index.js",
+  "scripts": {
+    "test": "live-server"
+  },
+  "keywords": [
+    "portfolio",
+    "powerpoint",
+    "pdf"
+  ],
+  "author": "song myeongjin",
+  "license": "ISC"
+}
