@@ -44,8 +44,8 @@ body{
     vertical-align: middle;
     overflow: hidden;
     width : 350px;
-    top : 300px;
-    left : 330px;
+    top : 100px;
+    left : 15px;
 }
 
 #title_page .blackFont{
@@ -67,8 +67,6 @@ body{
 
 .title_section{
     position: absolute;
-    width : 960px;
-    height : 760px;
 }
 
 .weightedLine{
@@ -76,23 +74,28 @@ body{
     background-color: #3363e7;
     height: 5px;
     width : 360px;
-    top : 430px;
-    left : 650px;
+    top : 75px;
 }
 .thinline{
     position: absolute;
     background-color: #3363e7;
     height : 1px;
     width : 360px;
-    left : 650px;
-    top: 438px;
+    top: 82px;
 }
 
 .thinline_bottom{
     position: absolute;
     background-color: #3363e7;
-    top : 615px;
-    left : 650px;
+    top : 270px;
     width : 360px;
-    height: 1px;
+    height: 2px;
+}
+
+.warp_line{
+    position: absolute;
+    width : 360px;
+    height : 300px;
+    margin-left: 315px;
+    top : 360px;
 }
