@@ -7,11 +7,45 @@
     font-family: NanumGothic;
     src: url(./fonts/NanumGothic-Bold.ttf) format('truetype');
 }
+body{
+    background-color: #efefef;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vh;
+}
+
+#root{
+    position: absolute;
+    height: 100%;
+    width : 100%;
+    display: table;
+}
+
+#middle{
+    width: 100%;
+    display: table-cell;    
+    vertical-align: middle;
+    margin-top: auto; 
+    margin-bottom: auto;
+}
+
+#title_page{
+    width: 960px;
+    height: 760px;
+    text-align: center;
+    margin-left: auto; 
+    margin-right: auto;
+    background-color: #fff;
+}
 
 #title_page .center_section{
-    padding: 20px;
+    position: absolute;
     text-align: center;
     vertical-align: middle;
+    overflow: hidden;
+    width : 350px;
+    top : 300px;
+    left : 330px;
 }
 
 #title_page .blackFont{
@@ -29,4 +63,36 @@
 #title_page p {
     font-family: GodoM, Roboto;
     font-size : 15pt;
+}
+
+.title_section{
+    position: absolute;
+    width : 960px;
+    height : 760px;
+}
+
+.weightedLine{
+    position: absolute;
+    background-color: #3363e7;
+    height: 5px;
+    width : 360px;
+    top : 430px;
+    left : 650px;
+}
+.thinline{
+    position: absolute;
+    background-color: #3363e7;
+    height : 1px;
+    width : 360px;
+    left : 650px;
+    top: 438px;
+}
+
+.thinline_bottom{
+    position: absolute;
+    background-color: #3363e7;
+    top : 615px;
+    left : 650px;
+    width : 360px;
+    height: 1px;
 }

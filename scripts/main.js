@@ -1,5 +1,5 @@
 function Portfolio(state){
-    this.root = document.querySelector('#root');    
+    this.root = document.querySelector('#middle');    
     this.state = state
 }
 
@@ -19,9 +19,13 @@ Portfolio.prototype.urlPathFinder = function(){
 }
 
 Portfolio.prototype.loadTemplate = function(){
+    
     fetch(this.urlPathFinder()).then(res => {
         if (res.ok) {
             res.text().then(output => {
+                if(this.state.pageIndex === 0){
+                    output = output.replace('${name}', this.state.pageWriter)
+                }
                 main.root.innerHTML = output;
             })
         }
@@ -32,6 +36,7 @@ Portfolio.prototype.loadTemplate = function(){
 
 var state = {
     pageIndex : 0,
+    pageWriter : "송명진",
     pageArray : []
 };
 
