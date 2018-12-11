@@ -4,7 +4,27 @@ function Portfolio(state){
 }
 
 Portfolio.prototype.btnEvtTrigger = function(){
+    let btnPrev = document.getElementById('prev')
+    let btnNext = document.getElementById('next')
     
+    btnPrev.addEventListener('click',()=>{
+        console.log(this.state);
+        if(this.state.pageIndex <= 0){
+            this.state.pageIndex = 0;
+        }else{
+            this.state.pageIndex -= 1;
+        }
+    });
+
+    btnNext.addEventListener('click',()=>{
+        console.log(this.state);
+        if (this.state.pageIndex >= this.state.pageArray.length) {
+            this.state.pageIndex = this.state.pageArray.length;
+        } else {
+            this.state.pageIndex += 1;
+        }
+    });
+
 }
 
 Portfolio.prototype.pushPage = function(){
@@ -31,11 +51,15 @@ Portfolio.prototype.loadTemplate = function(){
                     output = output.replace('${name}', this.state.pageWriter)
                 }
                 main.root.innerHTML = output;
+                console.log("Rendering OK!")
             })
         }
     },e => {
         console.log(e);
-    });
+    }).then(()=>{
+        console.log("After Rendering...");
+        this.btnEvtTrigger();
+    })
 }
 
 var state = {
