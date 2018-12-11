@@ -3,6 +3,10 @@ function Portfolio(state){
     this.state = state
 }
 
+Portfolio.prototype.btnEvtTrigger = function(){
+    
+}
+
 Portfolio.prototype.pushPage = function(){
 
 }
