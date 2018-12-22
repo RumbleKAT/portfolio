@@ -33,7 +33,8 @@ Portfolio.prototype.checkPage = function(){
 }
 
 Portfolio.prototype.getTypePage = function(pageIndex){
-    let currentPage = this.state.pageArray[pageIndex]
+    let currentPage = this.state.pageArray[pageIndex].type
+    console.log("currentPage : ",currentPage)
 
     if(currentPage === -1){
         return "../views/title_tmp.html"
@@ -43,6 +44,10 @@ Portfolio.prototype.getTypePage = function(pageIndex){
         return "../views/typeBtmp.html"
     }else if(currentPage === 2){
         return "../views/typeCtmp.html"
+    }else if(currentPage === 3){
+        return "../views/typeDtmp.html"
+    }else if(currentPage === 4){
+        return "../views/typeEtmp.html"
     }
 }
 
@@ -52,7 +57,7 @@ Portfolio.prototype.urlPathFinder = function(){
 }
 
 Portfolio.prototype.loadTemplate = function(){
-    //pagearray에서 index 찾기
+    //pageArray에서 index 찾기
     console.log(this.state.pageIndex);
     console.log(this.state.pageArray);
     
@@ -73,7 +78,6 @@ Portfolio.prototype.loadTemplate = function(){
         console.log(e);
     }).then(()=>{
         console.log("After Rendering...");
-        this.btnEvtTrigger();
     })
 }
 
@@ -95,9 +99,22 @@ var state = {
             ],
             leftContent : 'https://github.com/RumbleKAT/Catch_Mouse',
             rightContent : '역할 : 게임 클라이언트 개발자 \n 백엔드 개발자 \n 그래픽 디자이너'
+        },
+        {
+            type : 1
+        },
+        {
+            type : 2
+        },
+        {
+            type : 3
+        },
+        {
+            type : 4
         }
     ]
 };
 
 var main = new Portfolio(state);
 main.loadTemplate();
+main.btnEvtTrigger();
