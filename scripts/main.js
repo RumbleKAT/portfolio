@@ -7,7 +7,6 @@ Portfolio.prototype.btnEvtTrigger = function(){
     let btnPrev = document.getElementById('prev')
     let btnNext = document.getElementById('next')
     btnPrev.addEventListener('click',()=>{
-        console.log(this.state);
         if(this.state.pageIndex <= 0){
             this.state.pageIndex = 0;
         }else{
@@ -17,9 +16,8 @@ Portfolio.prototype.btnEvtTrigger = function(){
     });
 
     btnNext.addEventListener('click',()=>{
-        console.log(this.state);
-        if (this.state.pageIndex >= this.state.pageArray.length) {
-            this.state.pageIndex = this.state.pageArray.length;
+        if (this.state.pageIndex >= this.state.pageArray.length-1) {
+            this.state.pageIndex = this.state.pageIndex;
         } else {
             this.state.pageIndex += 1;
         }
@@ -31,26 +29,41 @@ Portfolio.prototype.checkPage = function(){
     console.log("checking page!!");
     console.log(this.state.pageIndex);
 
+    this.loadTemplate();
+}
+
+Portfolio.prototype.getTypePage = function(pageIndex){
+    let currentPage = this.state.pageArray[pageIndex]
+
+    if(currentPage === -1){
+        return "../views/title_tmp.html"
+    }else if(currentPage === 0){
+        return "../views/typeAtmp.html"
+    }else if(currentPage === 1){
+        return "../views/typeBtmp.html"
+    }else if(currentPage === 2){
+        return "../views/typeCtmp.html"
+    }
 }
 
 Portfolio.prototype.urlPathFinder = function(){
     //modify pageIndex number
-    if(this.state.pageIndex === 0){
-        return "../views/title_tmp.html"
-    }else if (this.state.pageIndex === 1){
-        return "../views/EOD_tmp.html";
-    }else{
-           
-    }
+    return this.getTypePage(this.state.pageIndex);
 }
 
 Portfolio.prototype.loadTemplate = function(){
+    //pagearray에서 index 찾기
+    console.log(this.state.pageIndex);
+    console.log(this.state.pageArray);
     
+    //고치기...Index 읽고 pageIndex로 변환 
     fetch(this.urlPathFinder()).then(res => {
         if (res.ok) {
             res.text().then(output => {
                 if(this.state.pageIndex === 0){
                     output = output.replace('${name}',this.state.pageArray[0].pageWriter)
+                }else if(this.state.pageIndex === 1){
+                    //
                 }
                 main.root.innerHTML = output;
                 console.log("Rendering OK!")
