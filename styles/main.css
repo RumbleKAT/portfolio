@@ -60,7 +60,7 @@ body{
     color: #3363e7
 }
 
-#title_page p {
+#title_page > p {
     font-family: GodoM, Roboto;
     font-size : 15pt;
 }
@@ -145,4 +145,70 @@ body{
 
  .nextCircle:hover{
      background-color: #a6a6a6;
+ }
+
+ .content{
+     padding: 30px;
+     height: inherit;
+ }
+
+ .content *{
+    margin-left : 10px;
+ }
+
+ .content_header{
+    border-top: solid 4px #262626;
+    border-bottom: solid 2px #cccccc;
+    height: 18%;
+    text-align: left;
+ }
+
+ .content_header_title{
+     font-size: 35px;
+     font-family: 'GodoM';
+     display: inline-block;
+     margin-top: 20px;
+     margin-bottom: 10px;
+ }
+
+ .content_header_date{
+    font-size: 12px;
+    font-family: 'godoM';
+    float: right;
+    margin-top : 15px;
+    margin-right: 10px;
+} 
+
+.content_header p{
+    font-size : 15px;
+    margin-left : 10px;
+    font-family: 'godoM'
+}
+
+ .content_pictures div{
+     float: left;
+     width : 31%;
+     margin-left : 1%;
+     margin-right: 1%;
+     margin-top : 8%;
+     height: 300px;
+     border : solid 1.0px #262626;
+ }
+
+ .content_leftPart{
+    width : 63.5%;
+    height : 150px; 
+    border : solid 1.0px #262626;
+    float: left;
+    margin-top : 20px;
+    margin-left: 2%;
+ }
+
+ .content_rightPart{
+     width : 30.5%;
+     float : right;
+     height : 150px; 
+     border : solid 1.0px #262626;
+     margin-right: 1.5%;
+     margin-top : 20px;
  }
