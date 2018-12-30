@@ -185,30 +185,3 @@ body{
     font-family: 'godoM'
 }
 
- .content_pictures div{
-     float: left;
-     width : 31%;
-     margin-left : 1%;
-     margin-right: 1%;
-     margin-top : 8%;
-     height: 300px;
-     border : solid 1.0px #262626;
- }
-
- .content_leftPart{
-    width : 63.5%;
-    height : 150px; 
-    border : solid 1.0px #262626;
-    float: left;
-    margin-top : 20px;
-    margin-left: 2%;
- }
-
- .content_rightPart{
-     width : 30.5%;
-     float : right;
-     height : 150px; 
-     border : solid 1.0px #262626;
-     margin-right: 1.5%;
-     margin-top : 20px;
- }
