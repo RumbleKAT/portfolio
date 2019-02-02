@@ -9,6 +9,12 @@
     border : solid 1.0px #262626;
 }
 
+.content_pictures div img{
+    width:100%;
+    height:300px;
+    margin-left:0
+}
+
 .content_leftPart{
    width : 63.5%;
    height : 150px; 
