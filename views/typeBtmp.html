@@ -2,17 +2,27 @@
 <div id="title_page">
     <div class="content">
         <div class="content_header">
-            <span class="content_header_title">01 두더지를 잡아라</span>
-            <span class="content_header_date">제작시기: 2017년 05월</span>
+            <span class="content_header_title">${titleIdx} ${title}</span>
+            <span class="content_header_date">${date}</span>
             <p>
-                두더지를 잡아라는 C++ 기반 오픈소스 라이브러리로 개발된 게임입니다. 시간에 따라 두더지와 토끼, 폭탄 두더지 등 다양한 게임요소들의 등장으로 단순함을 탈피하고 Microsoft Azure와의 연동으로 랭킹제를 제작했습니다.
+                ${content}
             </p>
         </div>
         <div class="content_pictures">
-            <div>Picture 1</div>
-            <div>Picture 2</div>
-            <div>Picture 3</div>
-            <div>Picture 4</div>
+            <div>
+                <img src="${img0}"/>
+            </div>
+            <div>
+                <img src="${img1}"/>
+            </div>
+            <div>
+                <img src="${img2}"/>
+            </div>
+            <div>
+                <div class="content_description">
+                ${rightPart}
+                </div>
+            </div>
         </div>
     </div>
 </div>

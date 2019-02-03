@@ -28,8 +28,11 @@ Portfolio.prototype.btnEvtTrigger = function(){
 Portfolio.prototype.checkPage = function(){
     console.log("checking page!!");
     console.log(this.state.pageIndex);
-
-    this.loadTemplate();
+    try{
+        this.loadTemplate();
+    }catch(exception){
+        console.log(exception);
+    }
 }
 
 Portfolio.prototype.getTypePage = function(pageIndex){
@@ -56,29 +59,43 @@ Portfolio.prototype.urlPathFinder = function(){
     return this.getTypePage(this.state.pageIndex);
 }
 
+Portfolio.prototype.matchContent = function(param){
+    console.log(param);
+}
+
 Portfolio.prototype.loadTemplate = function(){
     //pageArray에서 index 찾기
     console.log(this.state.pageIndex);
     console.log(this.state.pageArray);
     
-    //고치기...Index 읽고 pageIndex로 변환 
     fetch(this.urlPathFinder()).then(res => {
         if (res.ok) {
             res.text().then(output => {
                 if(this.state.pageIndex === 0){
                     output = output.replace('${name}',this.state.pageArray[0].pageWriter)
-                }else if(this.state.pageIndex === 1){
-                    output = output.replace('${titleIdx}',this.state.pageArray[1].titleIdx)
-                                    .replace('${title}',this.state.pageArray[1].title)
-                                    .replace('${date}',this.state.pageArray[1].date)
-                                    .replace('${content}',this.state.pageArray[1].description)
-                                    .replace('${url}',this.state.pageArray[1].leftContent)
-                                    .replace('${part}',this.state.pageArray[1].rightContent)
-                
-                    this.state.pageArray[1].img.forEach((element,idx) => {
-                        let img = "${img" + idx + "}";
-                        output = output.replace(img,element);
-                    });
+                }else{
+                    let idx = this.state.pageIndex
+                    output = output.replace('${titleIdx}',this.state.pageArray[idx].titleIdx)
+                                    .replace('${title}',this.state.pageArray[idx].title)
+                                    .replace('${date}',this.state.pageArray[idx].date)
+                                    .replace('${content}',this.state.pageArray[idx].description)
+                    //left content replace
+                    if(Array.isArray(this.state.pageArray[idx].leftContent)){
+                        this.matchContent(this.state.pageArray[idx].leftContent);
+                    }
+                    //right content replace
+                    if(Array.isArray(this.state.pageArray[idx].rightContent)){
+                        this.matchContent(this.state.pageArray[idx].rightContent);
+                    }
+
+                    output = output.replace('${leftPart}',this.state.pageArray[idx].leftContent)
+                                   .replace('${rightPart}',this.state.pageArray[idx].rightContent)
+                    if(Array.isArray(this.state.pageArray[idx].img)){
+                        this.state.pageArray[idx].img.forEach((element,idx) => {
+                            let img = "${img" + idx + "}";
+                            output = output.replace(img,element);
+                        });
+                    }
                 }
                 main.root.innerHTML = output;
                 console.log("Rendering OK!")
@@ -90,40 +107,6 @@ Portfolio.prototype.loadTemplate = function(){
         console.log("After Rendering...");
     })
 }
-
-var state = {
-    pageIndex : 0,
-    pageArray : [
-        {
-            type : -1,
-            pageWriter : "송명진"
-        },
-        {
-            type : 0,
-            titleIdx : '01',
-            title : '두더지를 잡아라',
-            date : '2017년 05월',
-            description : '두더지를 잡아라는 C++ 기반 오픈소스 라이브러리로 개발된 게임입니다. 시간에 따라 두더지와 토끼, 폭탄 두더지 등 다양한 게임요소들의 등장으로 단순함을 탈피하고 Microsoft Azure와의 연동으로 랭킹제를 제작했습니다.',
-            img : [
-                './resources/01/01.png','./resources/01/01.png','./resources/01/01.png'
-            ],
-            leftContent : 'https://github.com/RumbleKAT/Catch_Mouse',
-            rightContent : '역할 : 게임 클라이언트 개발자 \n 백엔드 개발자 \n 그래픽 디자이너'
-        },
-        {
-            type : 1
-        },
-        {
-            type : 2
-        },
-        {
-            type : 3
-        },
-        {
-            type : 4
-        }
-    ]
-};
 
 var main = new Portfolio(state);
 main.loadTemplate();
