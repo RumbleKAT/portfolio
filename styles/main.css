@@ -184,6 +184,9 @@ body{
     margin-left : 10px;
     font-family: 'godoM'
 }
+.content * {
+    font-family: 'godoM';
+}
 
 .content ul{
     margin : 0;
