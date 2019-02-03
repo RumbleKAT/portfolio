@@ -59,22 +59,20 @@ Portfolio.prototype.urlPathFinder = function(){
     return this.getTypePage(this.state.pageIndex);
 }
 
-Portfolio.prototype.matchContent = function(param){
+Portfolio.prototype.matchContent = function(element){
     let result = "";
-    param.forEach((element,idx) =>{
-        result += '<h3>' + element.sub_title+ '</h3>';
-        result += '<ul>';
-        if(Array.isArray(element.sub_description)){
-            element.sub_description.forEach(obj => {
-                result += '<li>';
-                result += obj;
-                result += '</li>';
-            });
-        }else{
-            result += '<li>' + element.sub_description + '</li>'
-        }
-        result += '</ul>';
-    })
+    result += '<h3>' + element.sub_title+ '</h3>';
+    result += '<ul>';
+    if(Array.isArray(element.sub_description)){
+        element.sub_description.forEach(obj => {
+            result += '<li>';
+            result += obj;
+            result += '</li>';
+        });
+    }else{
+        result += '<li>' + element.sub_description + '</li>'
+    }
+    result += '</ul>';
     return result;
 }
 
@@ -94,25 +92,15 @@ Portfolio.prototype.loadTemplate = function(){
                                     .replace('${title}',this.state.pageArray[idx].title)
                                     .replace('${date}',this.state.pageArray[idx].date)
                                     .replace('${content}',this.state.pageArray[idx].description)
-                    //left content replace
-                    if(Array.isArray(this.state.pageArray[idx].leftBottomContent)){
-                        output = output.replace('${leftBottomPart}',this.matchContent(this.state.pageArray[idx].leftBottomContent));
-                    }else{
-                        output = output.replace('${leftBottomPart}',this.state.pageArray[idx].leftContent);
-                    }
-                    //right content replace
-                    if(Array.isArray(this.state.pageArray[idx].rightBottomContent)){
-                        output = output.replace('${rightBottomPart}',this.matchContent(this.state.pageArray[idx].rightBottomContent));
-                    }else{
-                        output = output.replace('${rightBottomPart}',this.state.pageArray[idx].rightContent);
-                    }
-
-                    if(Array.isArray(this.state.pageArray[idx].img)){
-                        this.state.pageArray[idx].img.forEach((element,idx) => {
-                            let img = "${img" + idx + "}";
-                            output = output.replace(img,element);
-                        });
-                    }
+                    this.state.pageArray[idx].contents.forEach((element,div_index) => {
+                        let currentIdx = '${' + div_index + '}';
+                        if(element.img_type === 1){
+                            let innerHTML = `<img src='` + element.img_src +`'/>`;
+                            output = output.replace(currentIdx,innerHTML);      
+                        }else{
+                            output = output.replace(currentIdx,this.matchContent(element));      
+                        }
+                   });
                 }
                 main.root.innerHTML = output;
                 console.log("Rendering OK!")

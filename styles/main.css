@@ -185,3 +185,22 @@ body{
     font-family: 'godoM'
 }
 
+.content ul{
+    margin : 0;
+}
+
+.content li{
+    color : #888;
+    text-align: left;
+    font-size : 1em;
+}
+
+.content h3{
+    text-align: left;
+    font-size: 1.2em;
+    margin-top : 10px;
+    margin-bottom : 10px;
+    margin-left : 10px;
+}
+
+
