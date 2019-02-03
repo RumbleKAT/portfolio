@@ -60,7 +60,22 @@ Portfolio.prototype.urlPathFinder = function(){
 }
 
 Portfolio.prototype.matchContent = function(param){
-    console.log(param);
+    let result = "";
+    param.forEach((element,idx) =>{
+        result += '<h3>' + element.sub_title+ '</h3>';
+        result += '<ul>';
+        if(Array.isArray(element.sub_description)){
+            element.sub_description.forEach(obj => {
+                result += '<li>';
+                result += obj;
+                result += '</li>';
+            });
+        }else{
+            result += '<li>' + element.sub_description + '</li>'
+        }
+        result += '</ul>';
+    })
+    return result;
 }
 
 Portfolio.prototype.loadTemplate = function(){
@@ -81,15 +96,17 @@ Portfolio.prototype.loadTemplate = function(){
                                     .replace('${content}',this.state.pageArray[idx].description)
                     //left content replace
                     if(Array.isArray(this.state.pageArray[idx].leftContent)){
-                        this.matchContent(this.state.pageArray[idx].leftContent);
+                        output = output.replace('${leftPart}',this.matchContent(this.state.pageArray[idx].leftContent));
+                    }else{
+                        output = output.replace('${leftPart}',this.state.pageArray[idx].leftContent);
                     }
                     //right content replace
                     if(Array.isArray(this.state.pageArray[idx].rightContent)){
-                        this.matchContent(this.state.pageArray[idx].rightContent);
+                        output = output.replace('${rightPart}',this.matchContent(this.state.pageArray[idx].rightContent));
+                    }else{
+                        output = output.replace('${rightPart}',this.state.pageArray[idx].rightContent);
                     }
 
-                    output = output.replace('${leftPart}',this.state.pageArray[idx].leftContent)
-                                   .replace('${rightPart}',this.state.pageArray[idx].rightContent)
                     if(Array.isArray(this.state.pageArray[idx].img)){
                         this.state.pageArray[idx].img.forEach((element,idx) => {
                             let img = "${img" + idx + "}";
