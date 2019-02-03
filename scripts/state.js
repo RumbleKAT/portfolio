@@ -61,8 +61,15 @@ var state = {
             img : [
                 './resources/01/01.png','./resources/01/01.png','./resources/01/01.png'
             ],
-            rightContent : [
+            leftBottomContent : [
                 {
+                    img_type : 1,
+                    img_src : './resources/01/01.png'
+                }
+            ],
+            rightBottomContent : [
+                {
+                    img_type : 0,
                     sub_title : '기획의도',
                     sub_description :[
                       '타워는 나무들로 이루어져 있는데 나무들이 미세먼 지 등 환경문제의 원인들을 잡아가면서 스코어를 늘리는 방식으로 움직입니다.',
@@ -77,11 +84,25 @@ var state = {
             title : 'Natural Fighter',
             date : '2017년 03월',
             description : '각 국의 미세먼지 데이터를 받아와서 미세먼지 농도에 따라 게임 난이도가 달라지는 타워 디펜스 게임을 제작해봤습니 다. 게임 클라이언트 엔진으로 Unity 3D c#을 이용했고 nodejs로 개발한 서버에서 각국의 미세먼지 데이터를 제공받았습니다.',
+            /*
+                content type 설정
+            */
+            contents : [
+                {
+                    img_type : 1,
+                    img_src : './resources/01/01.png'
+                },
+                {
+                    img_type : 1,
+                    img_src : './resources/01/01.png'
+                }
+            ],
             img : [
                 './resources/01/01.png','./resources/01/01.png'
             ],
-            leftContent : [
+            leftBottomContent : [
                 {
+                    img_type : 0,//-1 text type
                     sub_title : '기획의도',
                     sub_description :[
                       '게임을플레이하고스코어를명예의전당에업데 이트 할 수 있습니다.',
@@ -90,8 +111,9 @@ var state = {
                     ]
                 }
             ],
-            rightContent : [
+            rightBottomContent : [
                 {
+                    img_type : 0,
                     sub_title : '아쉬운 점',
                     sub_description :[
                       '미세먼지 데이터를 받을 때 두 가지 웹사이트의 데이터를 파싱하여 데이터 값의 차이가 있어서 게임 난이도에 커다란 영향을 미쳤습니다.',
@@ -102,7 +124,7 @@ var state = {
             ]
         },
         {
-            type : 4
+            type : 2
         }
     ]
 };

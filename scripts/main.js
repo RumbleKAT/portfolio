@@ -95,16 +95,16 @@ Portfolio.prototype.loadTemplate = function(){
                                     .replace('${date}',this.state.pageArray[idx].date)
                                     .replace('${content}',this.state.pageArray[idx].description)
                     //left content replace
-                    if(Array.isArray(this.state.pageArray[idx].leftContent)){
-                        output = output.replace('${leftPart}',this.matchContent(this.state.pageArray[idx].leftContent));
+                    if(Array.isArray(this.state.pageArray[idx].leftBottomContent)){
+                        output = output.replace('${leftBottomPart}',this.matchContent(this.state.pageArray[idx].leftBottomContent));
                     }else{
-                        output = output.replace('${leftPart}',this.state.pageArray[idx].leftContent);
+                        output = output.replace('${leftBottomPart}',this.state.pageArray[idx].leftContent);
                     }
                     //right content replace
-                    if(Array.isArray(this.state.pageArray[idx].rightContent)){
-                        output = output.replace('${rightPart}',this.matchContent(this.state.pageArray[idx].rightContent));
+                    if(Array.isArray(this.state.pageArray[idx].rightBottomContent)){
+                        output = output.replace('${rightBottomPart}',this.matchContent(this.state.pageArray[idx].rightBottomContent));
                     }else{
-                        output = output.replace('${rightPart}',this.state.pageArray[idx].rightContent);
+                        output = output.replace('${rightBottomPart}',this.state.pageArray[idx].rightContent);
                     }
 
                     if(Array.isArray(this.state.pageArray[idx].img)){
