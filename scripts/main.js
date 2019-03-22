@@ -6,9 +6,10 @@ function Portfolio(state){
 Portfolio.prototype.btnEvtTrigger = function(){
     let btnPrev = document.getElementById('prev')
     let btnNext = document.getElementById('next')
+
     btnPrev.addEventListener('click',()=>{
         if(this.state.pageIndex <= 0){
-            this.state.pageIndex = 0;
+            this.state.pageIndex = this.state.pageArray.length-1;
         }else{
             this.state.pageIndex -= 1;
         }
@@ -18,7 +19,7 @@ Portfolio.prototype.btnEvtTrigger = function(){
     btnNext.addEventListener('click',()=>{
         if (this.state.pageIndex >= this.state.pageArray.length-1) {
             this.state.pageIndex = 0;
-        } else {
+        }else{
             this.state.pageIndex += 1;
         }
         this.checkPage();
@@ -51,6 +52,8 @@ Portfolio.prototype.getTypePage = function(pageIndex){
         return "../views/typeDtmp.html"
     }else if(currentPage === 4){
         return "../views/typeEtmp.html"
+    }else if(currentPage === 5){
+        return "../views/EOD_tmp.html"
     }
 }
 
@@ -85,22 +88,25 @@ Portfolio.prototype.loadTemplate = function(){
     fetch(this.urlPathFinder()).then(res => {
         if (res.ok) {
             res.text().then(output => {
+                
                 if(this.state.pageIndex === 0){
                     output = output.replace('${name}',this.state.pageArray[0].pageWriter)
-                }else{
+                }else if(this.state.pageIndex === this.state.pageArray.length-1){
+                    console.log(output);
+                }
+                else{
                     let idx = this.state.pageIndex
                     output = output.replace('${titleIdx}',this.state.pageArray[idx].titleIdx)
                                     .replace('${title}',this.state.pageArray[idx].title)
                                     .replace('${date}',this.state.pageArray[idx].date)
                                     .replace('${content}',this.state.pageArray[idx].description)
                     this.state.pageArray[idx].contents.forEach((element,div_index) => {
-                        //console.log(element);
                         let currentIdx = '${' + div_index + '}';
                         if(element.img_type === 1){
                             let innerHTML = `<img src='` + element.img_src +`'/>`;
                             output = output.replace(currentIdx,innerHTML);      
-                        }else{
-
+                        }
+                        else{
                             output = output.replace(currentIdx,this.matchContent(element));      
                         }
                    });

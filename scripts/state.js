@@ -456,6 +456,9 @@ var state = {
                     img_src : './resources/01/01.png'
                 }
             ]
-        },
+        },{
+            type : 5,
+            title : 'Thank You'
+        }
     ]
 };
