@@ -93,6 +93,7 @@ Portfolio.prototype.loadTemplate = function(){
                                     .replace('${date}',this.state.pageArray[idx].date)
                                     .replace('${content}',this.state.pageArray[idx].description)
                     this.state.pageArray[idx].contents.forEach((element,div_index) => {
+                        console.log(element);
                         let currentIdx = '${' + div_index + '}';
                         if(element.img_type === 1){
                             let innerHTML = `<img src='` + element.img_src +`'/>`;

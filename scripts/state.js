@@ -257,7 +257,7 @@ var state = {
             ]
         },
         {
-            type : 3,
+            type : 2,
             titleIdx : '04',
             title : '키즈마루',
             date : '2017년 07월',
@@ -271,8 +271,12 @@ var state = {
                     img_type : 0, //-1 text type
                     sub_title : '아쉬운 점',
                     sub_description : [
-                        '기획했을때예상하지못했던문제점을보고팀원 간에 철저한 기획단계를 거쳤으면 더 좋은 결과물을 만들어 낼 수 있을거라는 아쉬움이 있습니다.'
+                        '기획했을 때 예상하지 못했던 문제점을 보고 팀원 간에 철저한 기획단계를 거쳤으면 더 좋은 결과물을 만들어 낼 수 있을거라는 아쉬움이 있습니다.'
                     ]
+                },
+                {
+                    img_type : 1,
+                    img_src : './resources/01/01.png'
                 },
                 {
                     img_type : 1,
