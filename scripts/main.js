@@ -17,7 +17,7 @@ Portfolio.prototype.btnEvtTrigger = function(){
 
     btnNext.addEventListener('click',()=>{
         if (this.state.pageIndex >= this.state.pageArray.length-1) {
-            this.state.pageIndex = this.state.pageIndex;
+            this.state.pageIndex = 0;
         } else {
             this.state.pageIndex += 1;
         }
@@ -70,7 +70,8 @@ Portfolio.prototype.matchContent = function(element){
             result += '</li>';
         });
     }else{
-        result += '<li>' + element.sub_description + '</li>'
+        if(element.sub_description !== "") 
+            result += '<li>' + element.sub_description + '</li>'
     }
     result += '</ul>';
     return result;
@@ -93,12 +94,13 @@ Portfolio.prototype.loadTemplate = function(){
                                     .replace('${date}',this.state.pageArray[idx].date)
                                     .replace('${content}',this.state.pageArray[idx].description)
                     this.state.pageArray[idx].contents.forEach((element,div_index) => {
-                        console.log(element);
+                        //console.log(element);
                         let currentIdx = '${' + div_index + '}';
                         if(element.img_type === 1){
                             let innerHTML = `<img src='` + element.img_src +`'/>`;
                             output = output.replace(currentIdx,innerHTML);      
                         }else{
+
                             output = output.replace(currentIdx,this.matchContent(element));      
                         }
                    });
