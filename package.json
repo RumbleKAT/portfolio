@@ -4,7 +4,8 @@
   "description": "make portfolio easily with browser ",
   "main": "index.js",
   "scripts": {
-    "test": "live-server"
+    "test": "live-server",
+    "build": "webpack"
   },
   "keywords": [
     "portfolio",
@@ -12,5 +13,14 @@
     "pdf"
   ],
   "author": "song myeongjin",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "html2canvas": "^1.0.0-alpha.12",
+    "jspdf": "^1.5.3",
+    "terser": "^3.14.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1"
+  }
 }
