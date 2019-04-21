@@ -1,6 +1,11 @@
 .DS_Store
+<<<<<<< HEAD
 /.vscode
 /node_modules
 Thumbs.db
 package-lock.json
 yarn.lock
+=======
+/node_modules
+package-lock.json
+>>>>>>> fa139784df469ef5da3987d614e4d1b74a4ad46d

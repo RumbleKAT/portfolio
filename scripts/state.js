@@ -18,11 +18,11 @@ var state = {
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/01/02.png'
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/01/03.png'
                 },
                 {
                     img_type : 0, //-1 text type
@@ -45,15 +45,15 @@ var state = {
             contents: [
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/02/01.png'
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/02/02.png'
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/02/03.png'
                 },
                 {
                     img_type : 0,
@@ -76,15 +76,15 @@ var state = {
             contents: [
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/03/01.png'
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/03/02.png'
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/03/03.png'
                 },
                 {
                     img_type : 0,
@@ -110,15 +110,15 @@ var state = {
             contents: [
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/04/01.png'
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/04/02.png'
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/04/03.png'
                 },
                 {
                     img_type : 0,
@@ -142,11 +142,11 @@ var state = {
             contents : [
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/05/01.png'
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/05/02.png'
                 },
                 {
                     img_type : 0,//-1 text type
@@ -177,55 +177,29 @@ var state = {
             contents : [
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/06/01.png'
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/06/02.png'
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/06/03.png'
                 },
                 {
                     img_type : 0, //-1 text type
-                    sub_title : 'url',
-                    sub_description : 'https://github.com/RumbleKAT/kakao_autoreply'
-                },
-                {
-                    img_type : 0,
-                    sub_title : '', 
-                    sub_description : ''
-                }
-            ]
-        },
-        {
-            type : 0,
-            titleIdx : '03',
-            title : '우리말 도우미',
-            date : '2017년 01월',
-            description : '카카오 플러스 친구 우리말 도우미를 제작했습니다. 우리말도우미란 국어단어, 3개국어 번역(영어, 일어, 중국 어), 백과사전 기능을 가진 채팅봇으로 REST API 설계에 맞게 HTTP 메서드를 이용하였습니다.(Get, Post, Put , Delete)',
-            contents : [
-                {
-                    img_type : 1,
-                    img_src : './resources/01/01.png'
-                },
-                {
-                    img_type : 1,
-                    img_src : './resources/01/01.png'
-                },
-                {
-                    img_type : 1,
-                    img_src : './resources/01/01.png'
+                    sub_title : '서비스 설명',
+                    sub_description : [
+                       'nodejs를 이용한 챗봇 서비스로 국립국어원에서 제공하는 우리말 샘 open api와 NAVER Translate api를 활용한 자동응답 서비스',
+                       '사용자 마다 State 객체를 부여받고 해당 State를 갱신하면서 병렬적으로 많은 사용자들의 동시접속을 가능하게 만듬',
+                       '현재는 Naver Business Platform에서 제공하는 클라우드 서비스를 이용하고 있으며 OS는 Ubuntu 16을 이용',
+                       'https://github.com/RumbleKAT/kakao_autoreply'
+                    ]
                 },
                 {
                     img_type : 0, //-1 text type
-                    sub_title : '아쉬운 점',
-                    sub_description : '우리말 도우미를 사용하면서 사용자들의 의도를 좀더 명확하게 파악하는 기능이 추가되어야 한다고 생각했습니다. 그 해결 방법을 Microsoft Luis api에서 찾았고 사용자 데이터를 학습시켜 서비스를 업데이트 할 예정입니다.'
-                },
-                {
-                    img_type : 0,
-                    sub_title : '', 
+                    sub_title : '',
                     sub_description : ''
                 }
             ]
@@ -239,11 +213,11 @@ var state = {
             contents : [
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/07/01.png'
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/07/02.png'
                 },
                 {
                     img_type : 0, //-1 text type
@@ -257,7 +231,7 @@ var state = {
             ]
         },
         {
-            type : 3,
+            type : 2,
             titleIdx : '04',
             title : '키즈마루',
             date : '2017년 07월',
@@ -265,18 +239,22 @@ var state = {
             contents : [
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/08/01.png'
                 },
                 {
                     img_type : 0, //-1 text type
                     sub_title : '아쉬운 점',
                     sub_description : [
-                        '기획했을때예상하지못했던문제점을보고팀원 간에 철저한 기획단계를 거쳤으면 더 좋은 결과물을 만들어 낼 수 있을거라는 아쉬움이 있습니다.'
+                        '기획했을 때 예상하지 못했던 문제점을 보고 팀원 간에 철저한 기획단계를 거쳤으면 더 좋은 결과물을 만들어 낼 수 있을거라는 아쉬움이 있습니다.'
                     ]
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/08/02.png'
+                },
+                {
+                    img_type : 1,
+                    img_src : './resources/08/03.png'
                 }
             ]
         },
@@ -289,11 +267,11 @@ var state = {
             contents : [
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/09/01.png'
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/09/02.png'
                 },
                 {
                     img_type : 0, //-1 text type
@@ -322,15 +300,15 @@ var state = {
             contents: [
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/10/01.png'
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/10/02.png'
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/10/03.png'
                 },
                 {
                     img_type : 0, //-1 text type
@@ -353,16 +331,15 @@ var state = {
             contents: [
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/11/01.png'
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/11/02.png'
                 },
                 {
-                    img_type : 0, //-1 text type
-                    sub_title : '',
-                    sub_description : ''
+                    img_type : 1,
+                    img_src : './resources/11/03.png'
                 },
                 {
                     img_type : 0, //-1 text type
@@ -385,25 +362,24 @@ var state = {
             contents: [
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/12/01.png'
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/12/02.png'
                 },
                 {
                     img_type : 0, //-1 text type
                     sub_title : '개발과정',
                     sub_description : [
                         '리소스 지향 아키텍쳐(REST)를 기반으로 RESOURCE(uri), Verb(Http), Representations 3가지 구성으로 서버 내부를 구성',
-                        '사용자 개인정보의 보호를 위해 비밀번호를 bcrypt-nodejs 모듈을 통해 해싱키로 변환',
+                        '사용자 개인정보의 보호를 위해 비밀번호를 bcrypt-nodejs 모듈을 통해 해싱키로 변환하고 이를 JWT 토큰으로 만들어 사용자 세션 정보 제어',
                         '사용자의 비밀번호를 초기화 할 때 smtp 관련 모듈인 nodemailer를 사용하여 기존에 저장된 사용자의 이메일에 메일을 보내어 비밀번호를 확인할 수 있도록 제작',
                     ]
                 },
                 {
-                    img_type : 0, //-1 text type
-                    sub_title : '',
-                    sub_description : ''
+                    img_type : 1,
+                    img_src : './resources/12/03.png'
                 },
             ]
         },
@@ -416,15 +392,15 @@ var state = {
             contents: [
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/13/01.png'
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/13/02.png'
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/13/03.png'
                 },
                 {
                     img_type : 0, //-1 text type
@@ -445,13 +421,16 @@ var state = {
             contents: [
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/14/01.png'
                 },
                 {
                     img_type : 1,
-                    img_src : './resources/01/01.png'
+                    img_src : './resources/14/02.png'
                 }
             ]
-        },
+        },{
+            type : 5,
+            title : 'Thank You'
+        }
     ]
 };
