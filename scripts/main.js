@@ -41,19 +41,19 @@ Portfolio.prototype.getTypePage = function(pageIndex){
     //console.log("currentPage : ",currentPage)
 
     if(currentPage === -1){
-        return "../views/title_tmp.html"
+        return "./views/title_tmp.html"
     }else if(currentPage === 0){
-        return "../views/typeAtmp.html"
+        return "./views/typeAtmp.html"
     }else if(currentPage === 1){
-        return "../views/typeBtmp.html"
+        return "./views/typeBtmp.html"
     }else if(currentPage === 2){
-        return "../views/typeCtmp.html"
+        return "./views/typeCtmp.html"
     }else if(currentPage === 3){
-        return "../views/typeDtmp.html"
+        return "./views/typeDtmp.html"
     }else if(currentPage === 4){
-        return "../views/typeEtmp.html"
+        return "./views/typeEtmp.html"
     }else if(currentPage === 5){
-        return "../views/EOD_tmp.html"
+        return "./views/EOD_tmp.html"
     }
 }
 
